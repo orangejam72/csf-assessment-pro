@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSF Assessment Pro - Diagnostic</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .diagnostic {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+        .instruction {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .step {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .step::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 20px 10px;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagnostic">
+        <h1>🔍 CSF Assessment Pro - Browser Diagnostic</h1>
+
+        <div class="instruction">
+            <h2>Please Follow These Steps:</h2>
+
+            <div class="step">
+                <strong>Step 1:</strong> Click the button below to try opening the main app
+            </div>
+
+            <div class="step">
+                <strong>Step 2:</strong> If you see a blank page, press <code>F12</code> (Windows) or <code>Cmd+Option+I</code> (Mac) to open DevTools
+            </div>
+
+            <div class="step">
+                <strong>Step 3:</strong> Click the <code>Console</code> tab in DevTools
+            </div>
+
+            <div class="step">
+                <strong>Step 4:</strong> Look for any RED error messages
+            </div>
+
+            <div class="step">
+                <strong>Step 5:</strong> Share the first error message you see (copy and paste the full text)
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="/" class="button">🚀 Try Opening Main App</a>
+        </div>
+
+        <div class="instruction" style="margin-top: 40px;">
+            <h3>Common Issues to Look For:</h3>
+            <ul style="line-height: 1.8;">
+                <li>Messages containing "Cannot find module" or "Failed to resolve"</li>
+                <li>Messages about "React Router" or "BrowserRouter"</li>
+                <li>Messages about "Unexpected token" or "Syntax error"</li>
+                <li>Any message in red text starting with "Error:"</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 30px; padding: 15px; background: rgba(0,0,0,0.2); border-radius: 8px;">
+            <p><strong>Server Status:</strong> ✅ Running on http://localhost:5173/</p>
+            <p><strong>Your Browser:</strong> Chrome</p>
+            <p><strong>Test Page:</strong> ✅ Working (you can see this page)</p>
+        </div>
+    </div>
+
+    <script>
+        console.log('✅ Diagnostic page loaded successfully');
+        console.log('Server: http://localhost:5173/');
+        console.log('Browser:', navigator.userAgent);
+        console.log('If you see this message, JavaScript is working in your browser');
+    </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Download, Upload } from 'lucide-react';
 import Papa from 'papaparse';
 
@@ -125,64 +125,62 @@ const App = () => {
   }, [artifacts]);
 
   return (
-    <Router>
-      <div className="min-h-screen bg-gray-50">
-        {/* Header */}
-        <header className="bg-blue-600 text-white shadow-md">
-          <div className="max-w-7xl mx-auto px-4 py-4">
-            <h1 className="text-2xl font-bold">CSF Assessment Pro v1.0</h1>
-            <p className="text-sm text-blue-100">NIST Cybersecurity Framework 2.0 & Privacy Framework Assessment Tool</p>
-          </div>
-        </header>
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-blue-600 text-white shadow-md">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <h1 className="text-2xl font-bold">CSF Assessment Pro v1.0</h1>
+          <p className="text-sm text-blue-100">NIST Cybersecurity Framework 2.0 & Privacy Framework Assessment Tool</p>
+        </div>
+      </header>
 
-        {/* Navigation */}
-        <Navigation />
+      {/* Navigation */}
+      <Navigation />
 
-        {/* Main Content */}
-        <main className="max-w-7xl mx-auto px-4 py-6">
-          <Routes>
-            <Route path="/" element={
-              <Controls
-                data={data}
-                setData={setData}
-                users={users}
-                artifacts={artifacts}
-                loading={loading}
-              />
-            } />
-            <Route path="/dashboard" element={<Dashboard data={data} privacyData={privacyData} />} />
-            <Route path="/gap-analysis" element={<GapAnalysis data={data} privacyData={privacyData} />} />
-            <Route path="/scoring" element={<ScoringLegend />} />
-            <Route path="/artifacts" element={
-              <Artifacts
-                data={data}
-                artifacts={artifacts}
-                setArtifacts={setArtifacts}
-              />
-            } />
-            <Route path="/users" element={
-              <UserManagement
-                users={users}
-                setUsers={setUsers}
-              />
-            } />
-            <Route path="/documentation" element={<Documentation />} />
-          </Routes>
-        </main>
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 py-6">
+        <Routes>
+          <Route path="/" element={
+            <Controls
+              data={data}
+              setData={setData}
+              users={users}
+              artifacts={artifacts}
+              loading={loading}
+            />
+          } />
+          <Route path="/dashboard" element={<Dashboard data={data} privacyData={privacyData} />} />
+          <Route path="/gap-analysis" element={<GapAnalysis data={data} privacyData={privacyData} />} />
+          <Route path="/scoring" element={<ScoringLegend />} />
+          <Route path="/artifacts" element={
+            <Artifacts
+              data={data}
+              artifacts={artifacts}
+              setArtifacts={setArtifacts}
+            />
+          } />
+          <Route path="/users" element={
+            <UserManagement
+              users={users}
+              setUsers={setUsers}
+            />
+          } />
+          <Route path="/documentation" element={<Documentation />} />
+        </Routes>
+      </main>
 
-        {/* Footer */}
-        <footer className="bg-gray-800 text-white mt-16 py-6">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className="text-sm">
-              Based on NIST CSF 2.0 & Privacy Framework 1.0
-            </p>
-            <p className="text-xs text-gray-400 mt-2">
-              Merged tool combining simplecyber-csf-tool and SaaS-NIST-Tool
-            </p>
-          </div>
-        </footer>
-      </div>
-    </Router>
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white mt-16 py-6">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-sm">
+            Based on NIST CSF 2.0 & Privacy Framework 1.0
+          </p>
+          <p className="text-xs text-gray-400 mt-2">
+            Merged tool combining simplecyber-csf-tool and SaaS-NIST-Tool
+          </p>
+        </div>
+      </footer>
+    </div>
   );
 };
 
